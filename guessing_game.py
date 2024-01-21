@@ -4,11 +4,11 @@ import random
 def start_game():
     player_guess = 'initialize'
     attempts = 0
-    answer = random.randint(0,10)
+    answer = random.randint(1,10)
     while player_guess != answer:
         try:
-            player_guess = int(input(f"Guess a number between 0 and 10:  "))
-            if player_guess > 10 or player_guess < 0:
+            player_guess = int(input(f"Guess a number between 1 and 10:  "))
+            if player_guess > 10 or player_guess < 1:
                 raise Exception("That number is out of range. Try again.")
         except ValueError as err: 
             print("Please enter a whole number.")
