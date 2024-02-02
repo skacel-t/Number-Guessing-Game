@@ -2,7 +2,7 @@ import random
 
 #game code
 def start_game():
-    player_guess = 'initialize'
+    player_guess = None
     attempts = 0
     answer = random.randint(1,10)
     while player_guess != answer:
@@ -23,7 +23,7 @@ def start_game():
     return attempts            
 
 #Initializing variables
-high_score = 'No high score yet.'
+high_score = None
 play_again = 'y' 
 
 #Running the game
@@ -31,7 +31,7 @@ print("\n------------------------------------ \nWelcome to the Number Guessing G
 while play_again.lower() == 'y':
     print(f"------------------------------------\nHigh Score: {high_score}\n")
     attempts = start_game()
-    if high_score == "No high score yet.":
+    if high_score == None:
         high_score = attempts
         play_again = input(f"\nCongratulations, you got it in {attempts} attempts! That is a new High Score! Would you like to play again? Y/N  ")
     elif high_score > attempts:
